@@ -1,0 +1,274 @@
+/* =========================================================
+   ESTILO RETRO 2009 / MODDING GOLDEN ERA
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --bg-main: #0d1117;
+    --bg-panel: #161b22;
+    --bg-header: linear-gradient(180deg, #21262d 0%, #161b22 100%);
+    --bg-card: linear-gradient(180deg, #1c2128 0%, #11151c 100%);
+    
+    --border-outer: #30363d;
+    --border-highlight: #484f58;
+    --border-glow: #00ff66;
+    
+    --text-primary: #e6edf3;
+    --text-muted: #8b949e;
+    --text-retro: #00ff66; /* Verde Neón Clásico */
+    
+    /* Categorías Retro */
+    --badge-mesh: #d2a8ff;
+    --badge-texture: #56d364;
+    --badge-pack: #ffa657;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Verdana', 'Tahoma', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    padding-top: 75px;
+    background-image: 
+        radial-gradient(#1f242c 1px, transparent 1px);
+    background-size: 16px 16px; /* Fondo punteado clásico */
+}
+
+/* NAVBAR FIJA ESTILO WEB 2.0 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-header);
+    border-bottom: 2px solid #00ff66;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--text-retro);
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.4);
+    letter-spacing: 0.5px;
+}
+
+/* BOTÓN DE CAMBIO DE VISTA EN DEGRADADO */
+.btn-toggle {
+    background: linear-gradient(180deg, #238636 0%, #196c2e 100%);
+    color: #ffffff;
+    border: 1px solid #2ea043;
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.82rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.1s ease;
+}
+
+.btn-toggle:hover {
+    background: linear-gradient(180deg, #2ea043 0%, #238636 100%);
+    border-color: #3fb950;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 8px rgba(46, 160, 67, 0.6);
+}
+
+.btn-toggle:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.category-section {
+    margin-bottom: 35px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-outer);
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 0 var(--border-highlight);
+}
+
+.category-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+    border-bottom: 1px solid var(--border-outer);
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* CARRUSEL / FILA HORIZONTAL */
+.horizontal-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: #0d1117;
+    border-radius: 4px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+    border: 1px solid #161b22;
+}
+
+/* TARJETAS DE MODS RETRO */
+.mod-card {
+    flex: 0 0 230px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-outer);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mod-card:hover {
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.25), 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-media {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: #000;
+    border-bottom: 1px solid var(--border-outer);
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+}
+
+.mod-card:hover .card-media img {
+    filter: brightness(1.1);
+}
+
+.badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 2px;
+    color: #000000;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.badge-mesh { background: var(--badge-mesh); }
+.badge-texture { background: var(--badge-texture); }
+.badge-pack { background: var(--badge-pack); }
+
+.card-info {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-info h3 {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info .author {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.card-info .author span {
+    color: var(--text-retro);
+}
+
+/* MODO CUADRÍCULA */
+.layout-grid {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-outer);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.grid-container .mod-card {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .mod-card {
+        flex: 0 0 190px;
+    }
+    
+    .nav-title {
+        font-size: 1rem;
+    }
+    
+    .btn-toggle {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
