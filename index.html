@@ -25,15 +25,21 @@
 
         <div id="rowLayout" class="layout-rows">
 
-            <!-- ===== MOD DESTACADO =====
-                 Para cambiarlo: edita la imagen, el título, la descripción y el enlace. -->
-            <section class="hero">
-                <img class="hero-bg" src="ImagesMods/Competitivo pack.png" alt="" onerror="this.style.display='none'">
+
+            <section class="hero" id="heroBanner">
+    <!-- Capas de imágenes para el efecto crossfade -->
+                <div class="hero-bg-wrapper">
+                    <img class="hero-bg active" src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack">
+                    <img class="hero-bg" src="ImagesMods/HUDparamaxi.png" alt="HUD">
+                    <img class="hero-bg" src="ImagesMods/DogeGuantesLima.png" alt="Doge Lima">
+                </div>
+
+    <!-- Contenido del banner -->
                 <div class="hero-content">
-                    <span class="hero-tag">Destacado</span>
-                    <h2>Competitivo Pack</h2>
-                    <p>El texturepack pensado para jugar competitivo, por CanalSmash.</p>
-                    <a class="hero-btn" href="Mods/Texturepack.html">Ver mod</a>
+                    <span class="hero-tag" id="heroTag">DESTACADO</span>
+                    <h2 id="heroTitle">Competitivo Pack</h2>
+                    <p id="heroDesc">El texturepack pensado para jugar competitivo, por CanalSmash.</p>
+                    <a class="hero-btn" id="heroBtn" href="Mods/Texturepack.html">Ver mod</a>
                 </div>
             </section>
 
@@ -206,6 +212,72 @@
     </main>
 
     <script>
+
+// CONFIGURACIÓN DEL BANNER ROTATIVO (10 SEGUNDOS)
+        const heroData = [
+        {
+            tag: "DESTACADO",
+            title: "Competitivo Pack",
+            desc: "El texturepack pensado para jugar competitivo, por CanalSmash.",
+            link: "Mods/Texturepack.html"
+        },
+        {
+            tag: "MÁS POPULAR",
+            title: "HUD Invisible",
+            desc: "Mod capaz de quitar elementos innecesarios para mejorar competitivamente.",
+            link: "Mods/HUDbajo-mod.html"
+        },
+        {
+            tag: "ÚLTIMO AGREGADO",
+            title: "Doge Guantes Lima",
+            desc: "Mod sencillo visual para Doge.",
+            link: "Mods/DogeLima-mod.html"
+        }
+    ];
+
+    let currentHeroIndex = 0;
+
+    function rotateHeroBanner() {
+        const bgImages = document.querySelectorAll('.hero-bg');
+        const heroContent = document.querySelector('.hero-content');
+    
+        const heroTag = document.getElementById('heroTag');
+        const heroTitle = document.getElementById('heroTitle');
+        const heroDesc = document.getElementById('heroDesc');
+        const heroBtn = document.getElementById('heroBtn');
+
+    // 1. Quitar opacidad al texto brevemente para cambiarlo limpiamente
+        heroContent.style.opacity = '0';
+
+        setTimeout(() => {
+        // 2. Avanzar el índice en bucle (0 -> 1 -> 2 -> 0)
+        currentHeroIndex = (currentHeroIndex + 1) % heroData.length;
+        const currentData = heroData[currentHeroIndex];
+
+        // 3. Cambiar imagen activa con CSS crossfade
+        bgImages.forEach((img, idx) => {
+            if (idx === currentHeroIndex) {
+                img.classList.add('active');
+            } else {
+                img.classList.remove('active');
+            }
+        });
+
+        // 4. Actualizar textos y enlace
+            heroTag.innerText = currentData.tag;
+            heroTitle.innerText = currentData.title;
+            heroDesc.innerText = currentData.desc;
+            heroBtn.href = currentData.link;
+
+        // 5. Volver a mostrar el texto suavemente
+            heroContent.style.opacity = '1';
+            }, 400); // 400ms coincide con el fade-out del texto
+    }
+
+
+        setInterval(rotateHeroBanner, 10000);        
+
+
         let isGrid = false;
 
         function toggleLayout() {

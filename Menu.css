@@ -8,12 +8,12 @@
     --accent: #66c0f4;
     --green: #a4d007;
     --text: #dbe5ee;
-    --muted: #8ba4ba;
+    --muted: #343442;
     --mesh: #b388ff;
     --texture: #6fe38f;
     --pack: #ffb457;
 
-    /* Alias para que las páginas de mod antiguas (con estilos en línea) no pierdan color */
+
     --text-muted: var(--muted);
     --text-retro: var(--accent);
 }
@@ -28,7 +28,49 @@ body {
     min-height: 100vh;
 }
 
-/* ============ HEADER ============ */
+
+.hero {
+    position: relative;
+    margin: 20px 0 8px;
+    height: 320px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex; 
+    align-items: flex-end;
+    background: var(--line);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.active {
+    opacity: 1;
+}
+
+
+.hero-content { 
+    position: relative; 
+    z-index: 10; 
+    padding: 28px; 
+    max-width: 560px; 
+    transition: opacity 0.4s ease;
+}
+
 .navbar {
     position: fixed; top: 0; left: 0; width: 100%;
     height: 56px;
@@ -64,10 +106,10 @@ body {
     flex-shrink: 0;
 }
 
-/* ============ CONTENEDOR ============ */
+
 .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 40px; }
 
-/* ============ MOD DESTACADO ============ */
+
 .hero {
     position: relative;
     margin: 20px 0 8px;
@@ -105,7 +147,7 @@ body {
     transition: filter 0.15s;
 }
 
-/* ============ SECCIONES ============ */
+
 .category-section { margin-top: 28px; }
 
 .category-title {
@@ -130,7 +172,7 @@ body {
 .horizontal-scroll::-webkit-scrollbar-track { background: transparent; }
 .horizontal-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
 
-/* ============ TARJETAS ============ */
+
 .mod-card {
     flex: 0 0 240px;
     display: flex; flex-direction: column;
@@ -170,7 +212,7 @@ body {
 .card-info .author { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
 .card-info .author span { color: var(--accent); }
 
-/* ============ CUADRICULA ============ */
+
 .layout-grid { margin-top: 24px; }
 .grid-container {
     display: grid;
@@ -181,7 +223,7 @@ body {
 
 .hidden { display: none !important; }
 
-/* ============ HOVER (solo en PC; en Android se ignora) ============ */
+
 @media (hover: hover) {
     .btn-toggle:hover, .hero-btn:hover { filter: brightness(1.15); }
     .mod-card:hover {
@@ -192,12 +234,11 @@ body {
     }
 }
 
-/* ============ EFECTO AL HACER CLIC / TOCAR ============
-   Va después del hover a propósito: así gana sobre él en PC y en Android. */
+
 .btn-toggle:active, .hero-btn:active { filter: brightness(0.9); }
 .mod-card:active { transform: scale(0.97); background: #1f3047; }
 
-/* ============ MÓVIL ============ */
+
 @media (max-width: 600px) {
     body { padding-top: 60px; }
     .nav-content { padding: 0 14px; }
