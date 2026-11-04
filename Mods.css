@@ -1,4 +1,3 @@
-/* Mods.css (estilo launcher): acompaña a Menu.css y usa sus variables */
 
 a.btn-toggle { text-decoration: none; display: inline-block; }
 
@@ -96,7 +95,7 @@ a.btn-toggle { text-decoration: none; display: inline-block; }
     .btn-download-retro:hover { filter: brightness(1.15); }
 }
 
-/* Después del hover a propósito, para que el efecto de clic gane sobre él */
+
 .btn-download-retro:active { filter: brightness(0.9); }
 
 /* para telefonos */

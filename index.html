@@ -31,7 +31,7 @@
                 <div class="hero-bg-wrapper">
                     <img class="hero-bg active" src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack">
                     <img class="hero-bg" src="ImagesMods/HUDparamaxi.png" alt="HUD">
-                    <img class="hero-bg" src="ImagesMods/DogeGuantesLima.png" alt="Doge Lima">
+                    <img class="hero-bg" src="ImagesMods/Ugandas.png" alt="Uganda">
                 </div>
 
     <!-- Contenido del banner -->
@@ -100,6 +100,17 @@
                         </div>
                     </a>
 
+                    <a href="Mods/Uganda.html" class="mod-card">
+                        <div class="card-media">
+                            <img src="ImagesMods/Ugandas.png" alt="Sanic" loading="lazy">
+                            <span class="badge badge-mesh">Mesh</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>UgandaTriwich</h3>
+                            <p class="author">Por <span>CanalSmash</span></p>
+                        </div>
+                    </a>
+
                 </div>
             </section>
 
@@ -132,7 +143,7 @@
 
                     <a href="Mods/Emoji_mod.html" class="mod-card">
                         <div class="card-media">
-                            <img src="ImagesMods/EpicFace Bomb.png" alt="EpicFace CheeryBomb" loading="lazy">
+                            <img src="ImagesMods/EpicFace.png" alt="EpicFace CheeryBomb" loading="lazy">
                             <span class="badge badge-texture">Textura</span>
                         </div>
                         <div class="card-info">
@@ -229,9 +240,9 @@
         },
         {
             tag: "ÚLTIMO AGREGADO",
-            title: "Doge Guantes Lima",
-            desc: "Mod sencillo visual para Doge.",
-            link: "Mods/DogeLima-mod.html"
+            title: "UgandasTriwich",
+            desc: "mete al clasico UgandaKnuckles por el Triwich.",
+            link: "Mods/Uganda.html"
         }
     ];
 
@@ -246,15 +257,14 @@
         const heroDesc = document.getElementById('heroDesc');
         const heroBtn = document.getElementById('heroBtn');
 
-    // 1. Quitar opacidad al texto brevemente para cambiarlo limpiamente
+
         heroContent.style.opacity = '0';
 
         setTimeout(() => {
-        // 2. Avanzar el índice en bucle (0 -> 1 -> 2 -> 0)
+
         currentHeroIndex = (currentHeroIndex + 1) % heroData.length;
         const currentData = heroData[currentHeroIndex];
 
-        // 3. Cambiar imagen activa con CSS crossfade
         bgImages.forEach((img, idx) => {
             if (idx === currentHeroIndex) {
                 img.classList.add('active');
@@ -263,15 +273,15 @@
             }
         });
 
-        // 4. Actualizar textos y enlace
+
             heroTag.innerText = currentData.tag;
             heroTitle.innerText = currentData.title;
             heroDesc.innerText = currentData.desc;
             heroBtn.href = currentData.link;
 
-        // 5. Volver a mostrar el texto suavemente
+
             heroContent.style.opacity = '1';
-            }, 400); // 400ms coincide con el fade-out del texto
+            }, 400);
     }
 
 
