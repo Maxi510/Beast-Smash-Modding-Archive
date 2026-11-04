@@ -1,128 +1,107 @@
-
+/* Mods.css (estilo launcher): acompaña a Menu.css y usa sus variables */
 
 a.btn-toggle { text-decoration: none; display: inline-block; }
 
 .mod-layout-grid {
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 28px;
+    gap: 24px;
     align-items: start;
+    margin-top: 24px;
 }
 
 .mod-detail-header {
-    background: var(--paper);
-    border: 5px solid var(--ink);
-    border-radius: 14px;
-    padding: 18px;
-    margin-bottom: 40px;
+    background: linear-gradient(90deg, rgba(102, 192, 244, 0.12), transparent);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    box-shadow: 9px 9px 0 var(--ink);
+    border-radius: 3px;
 }
 .mod-detail-header h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 2.6rem;
-    font-weight: normal;
-    letter-spacing: 2px;
-    line-height: 1;
-    color: var(--red);
-    -webkit-text-stroke: 2px var(--ink);
-    paint-order: stroke fill;
-    text-shadow: 3px 3px 0 var(--ink);
-    text-transform: uppercase;
-    margin-bottom: 8px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
 }
-
-.mod-detail-header .badge {
-    position: static;
-    flex-shrink: 0;
-    font-size: 1.2rem;
-    padding: 2px 14px;
-    border: 3px solid var(--ink);
-    transform: rotate(3deg);
-}
+/* El badge del encabezado va en flujo normal (no flotando en la esquina de la página) */
+.mod-detail-header .badge { position: static; flex-shrink: 0; }
 
 .retro-panel {
-    background: var(--paper);
-    border: 5px solid var(--ink);
-    border-radius: 14px;
+    background: var(--card);
+    border-radius: 4px;
     padding: 18px;
-    margin-bottom: 40px;
-    box-shadow: 9px 9px 0 var(--ink);
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 .retro-panel h2 {
-    display: inline-block;
-    font-family: 'Bangers', cursive;
-    font-size: 1.6rem;
-    font-weight: normal;
-    letter-spacing: 2px;
-    color: #fff;
-    background: var(--blue);
-    border: 4px solid var(--ink);
-    padding: 2px 16px;
-    margin: -34px 0 16px -6px;
-    box-shadow: 5px 5px 0 var(--ink);
-    transform: rotate(-2deg);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+}
+.retro-panel h2::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--line), transparent);
 }
 
 .main-preview-img img {
     width: 100%; height: 200px; object-fit: cover; display: block;
-    border: 4px solid var(--ink);
-    border-radius: 10px;
-    background: repeating-linear-gradient(45deg, #ddd 0 10px, #eee 10px 20px);
+    border-radius: 3px;
+    background: linear-gradient(135deg, var(--line), var(--card));
 }
 
 /* Galería interna */
-.gallery-scroll { display: flex; gap: 18px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x mandatory; }
+.gallery-scroll { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
 .gallery-scroll img {
     flex: 0 0 100%; max-width: 100%; height: 320px; object-fit: cover;
-    border: 4px solid var(--ink); border-radius: 10px; background: #000; scroll-snap-align: center;
+    border-radius: 3px; background: #000; scroll-snap-align: center;
 }
 
-.description-text { font-size: 1.1rem; line-height: 1.5; }
+.description-text { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
 
 .info-list { display: flex; flex-direction: column; }
 .info-row {
     display: flex; justify-content: space-between; gap: 12px;
     padding: 10px 0;
-    border-bottom: 3px dashed var(--ink);
-    font-size: 1rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.85rem;
 }
-.info-row span:first-child { color: #555; }
-.info-row span:last-child { color: var(--blue); text-align: right; }
+.info-row span:first-child { color: var(--muted); }
+.info-row span:last-child { color: #fff; text-align: right; }
 .info-row:last-child { border-bottom: none; }
 
 .download-box { text-align: center; }
-.download-box p { color: #444; font-size: 0.95rem; margin-bottom: 14px; }
+.download-box p { color: var(--muted); font-size: 0.8rem; margin-bottom: 14px; }
 
 .btn-download-retro {
-    display: inline-block;
-    font-family: 'Bangers', cursive;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
     color: #fff;
-    background: var(--green);
-    -webkit-text-stroke: 1.5px var(--ink);
-    paint-order: stroke fill;
-    border: 4px solid var(--ink);
-    border-radius: 12px;
-    padding: 8px 26px;
-    box-shadow: 5px 5px 0 var(--ink);
-    transition: transform 0.1s, box-shadow 0.1s;
+    background: linear-gradient(90deg, #75b022 0%, #588a1b 100%);
+    padding: 13px 20px;
+    border-radius: 3px;
+    transition: filter 0.15s;
 }
+
 @media (hover: hover) {
-    .btn-download-retro:hover { transform: rotate(-2deg) scale(1.05); }
+    .btn-download-retro:hover { filter: brightness(1.15); }
 }
 
 /* Después del hover a propósito, para que el efecto de clic gane sobre él */
-.btn-download-retro:active { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--ink); }
+.btn-download-retro:active { filter: brightness(0.9); }
 
 /* para telefonos */
 @media (max-width: 768px) {
-    .mod-layout-grid { grid-template-columns: 1fr; }
-    .mod-detail-header h1 { font-size: 1.9rem; }
+    .mod-layout-grid { grid-template-columns: 1fr; margin-top: 14px; gap: 0; }
+    .mod-detail-header h1 { font-size: 1.3rem; }
+    .main-preview-img img { height: 180px; }
 }
