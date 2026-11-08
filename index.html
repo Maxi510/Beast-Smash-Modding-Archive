@@ -14,40 +14,40 @@
                 <img src="logo.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'">
                 <span class="nav-title">Beast Smash Modding: Archive</span>
             </div>
-
-            <button id="toggleViewBtn" class="btn-toggle" onclick="toggleLayout()">
-                <span id="btnIcon">☷</span> <span id="btnText">Ver catalogo completo</span>
-            </button>
         </div>
     </header>
 
     <main class="main-container">
 
+        <!-- Banner Hero (Siempre visible arriba) -->
+        <section class="hero" id="heroBanner">
+            <div class="hero-bg-wrapper">
+                <img class="hero-bg active" src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack">
+                <img class="hero-bg" src="ImagesMods/HUDparamaxi.png" alt="HUD">
+                <img class="hero-bg" src="ImagesMods/Ugandas.png" alt="Uganda">
+            </div>
+
+            <div class="hero-content">
+                <span class="hero-tag" id="heroTag">DESTACADO</span>
+                <h2 id="heroTitle">Competitivo Pack</h2>
+                <p id="heroDesc">El texturepack pensado para jugar competitivo, por CanalSmash.</p>
+                <a class="hero-btn" id="heroBtn" href="Mods/Texturepack.html">Ver mod</a>
+            </div>
+        </section>
+
+        <!-- Botón abajo del banner, arriba de las categorías, y centrado -->
+        <div class="catalogue-action-bar" style="margin: 24px 0; display: flex; justify-content: center;">
+            <button id="toggleViewBtn" class="btn-toggle" onclick="toggleLayout()">
+                <span id="btnIcon">☷</span> <span id="btnText">Ver catalogo completo</span>
+            </button>
+        </div>
+
+        <!-- Contenedor de categorías por filas -->
         <div id="rowLayout" class="layout-rows">
-
-
-            <section class="hero" id="heroBanner">
-    <!-- Capas de imágenes para el efecto crossfade -->
-                <div class="hero-bg-wrapper">
-                    <img class="hero-bg active" src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack">
-                    <img class="hero-bg" src="ImagesMods/HUDparamaxi.png" alt="HUD">
-                    <img class="hero-bg" src="ImagesMods/Ugandas.png" alt="Uganda">
-                </div>
-
-    <!-- Contenido del banner -->
-                <div class="hero-content">
-                    <span class="hero-tag" id="heroTag">DESTACADO</span>
-                    <h2 id="heroTitle">Competitivo Pack</h2>
-                    <p id="heroDesc">El texturepack pensado para jugar competitivo, por CanalSmash.</p>
-                    <a class="hero-btn" id="heroBtn" href="Mods/Texturepack.html">Ver mod</a>
-                </div>
-            </section>
-
 
             <section class="category-section">
                 <h2 class="category-title">Texturepacks</h2>
                 <div class="horizontal-scroll">
-
                     <a href="Mods/Texturepack.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack" loading="lazy">
@@ -58,15 +58,12 @@
                             <p class="author">Por <span>CanalSmash</span></p>
                         </div>
                     </a>
-
                 </div>
             </section>
-
 
             <section class="category-section">
                 <h2 class="category-title">Mesh / Modelos 3D</h2>
                 <div class="horizontal-scroll">
-
                     <a href="Mods/Steve-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Steve.png" alt="Steve Minecraft" loading="lazy">
@@ -77,7 +74,6 @@
                             <p class="author">Por <span>Maxi</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Gorilla-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Gorilla Volador.png" alt="Gorila Volador" loading="lazy">
@@ -88,7 +84,6 @@
                             <p class="author">Por <span>Maxi</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Sanic.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/SanicPort.png" alt="Sanic" loading="lazy">
@@ -99,7 +94,6 @@
                             <p class="author">Por <span>Maxi</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Uganda.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Ugandas.png" alt="Sanic" loading="lazy">
@@ -110,15 +104,12 @@
                             <p class="author">Por <span>CanalSmash</span></p>
                         </div>
                     </a>
-
                 </div>
             </section>
-
 
             <section class="category-section">
                 <h2 class="category-title">Texturas</h2>
                 <div class="horizontal-scroll">
-
                     <a href="Mods/LightJuan-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Light.png" alt="Juan Light" loading="lazy">
@@ -129,7 +120,6 @@
                             <p class="author">Por <span>todocosasuwu_233</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/HUDbajo-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/HUDparamaxi.png" alt="HUD invisible" loading="lazy">
@@ -140,7 +130,6 @@
                             <p class="author">Por <span>Juncoo</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Emoji_mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/EpicFace.png" alt="EpicFace CheeryBomb" loading="lazy">
@@ -151,7 +140,6 @@
                             <p class="author">Por <span>Maxi</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/LuigiRage-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/LuigiRage.png" alt="LuigiRage" loading="lazy">
@@ -162,7 +150,6 @@
                             <p class="author">Por <span>CanalSmash</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Tripulante-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/tripulante.png" alt="Tripulante" loading="lazy">
@@ -173,7 +160,6 @@
                             <p class="author">Por <span>HolaSoyAlex</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Hulk-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Hulk.png" alt="Hulk" loading="lazy">
@@ -184,7 +170,6 @@
                             <p class="author">Por <span>Maxi</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/DogeLima-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/DogeGuantesLima.png" alt="Doge guantes lima" loading="lazy">
@@ -195,7 +180,6 @@
                             <p class="author">Por <span>MaxBeastSmash</span></p>
                         </div>
                     </a>
-
                     <a href="Mods/Mario-mod.html" class="mod-card">
                         <div class="card-media">
                             <img src="ImagesMods/Mario.png" alt="Mario" loading="lazy">
@@ -206,87 +190,77 @@
                             <p class="author">Por <span>CanalSmash</span></p>
                         </div>
                     </a>
-
                 </div>
             </section>
 
         </div>
 
-
+        <!-- Contenedor del Catálogo Completo (Grid) -->
         <div id="gridLayout" class="layout-grid hidden">
             <h2 class="category-title">Catálogo Completo</h2>
             <div class="grid-container" id="gridTarget">
-
             </div>
         </div>
 
     </main>
 
     <script>
-
-// CONFIGURACIÓN DEL BANNER ROTATIVO (10 SEGUNDOS)
         const heroData = [
-        {
-            tag: "DESTACADO",
-            title: "Competitivo Pack",
-            desc: "El texturepack pensado para jugar competitivo, por CanalSmash.",
-            link: "Mods/Texturepack.html"
-        },
-        {
-            tag: "MÁS POPULAR",
-            title: "HUD Invisible",
-            desc: "Mod capaz de quitar elementos innecesarios para mejorar competitivamente.",
-            link: "Mods/HUDbajo-mod.html"
-        },
-        {
-            tag: "ÚLTIMO AGREGADO",
-            title: "UgandasTriwich",
-            desc: "mete al clasico UgandaKnuckles por el Triwich.",
-            link: "Mods/Uganda.html"
-        }
-    ];
-
-    let currentHeroIndex = 0;
-
-    function rotateHeroBanner() {
-        const bgImages = document.querySelectorAll('.hero-bg');
-        const heroContent = document.querySelector('.hero-content');
-    
-        const heroTag = document.getElementById('heroTag');
-        const heroTitle = document.getElementById('heroTitle');
-        const heroDesc = document.getElementById('heroDesc');
-        const heroBtn = document.getElementById('heroBtn');
-
-
-        heroContent.style.opacity = '0';
-
-        setTimeout(() => {
-
-        currentHeroIndex = (currentHeroIndex + 1) % heroData.length;
-        const currentData = heroData[currentHeroIndex];
-
-        bgImages.forEach((img, idx) => {
-            if (idx === currentHeroIndex) {
-                img.classList.add('active');
-            } else {
-                img.classList.remove('active');
+            {
+                tag: "DESTACADO",
+                title: "Competitivo Pack",
+                desc: "El texturepack pensado para jugar competitivo, por CanalSmash.",
+                link: "Mods/Texturepack.html"
+            },
+            {
+                tag: "MÁS POPULAR",
+                title: "HUD Invisible",
+                desc: "Mod capaz de quitar elementos innecesarios para mejorar competitivamente.",
+                link: "Mods/HUDbajo-mod.html"
+            },
+            {
+                tag: "ÚLTIMO AGREGADO",
+                title: "UgandasTriwich",
+                desc: "mete al clasico UgandaKnuckles por el Triwich.",
+                link: "Mods/Uganda.html"
             }
-        });
+        ];
 
+        let currentHeroIndex = 0;
 
-            heroTag.innerText = currentData.tag;
-            heroTitle.innerText = currentData.title;
-            heroDesc.innerText = currentData.desc;
-            heroBtn.href = currentData.link;
+        function rotateHeroBanner() {
+            const bgImages = document.querySelectorAll('.hero-bg');
+            const heroContent = document.querySelector('.hero-content');
+        
+            const heroTag = document.getElementById('heroTag');
+            const heroTitle = document.getElementById('heroTitle');
+            const heroDesc = document.getElementById('heroDesc');
+            const heroBtn = document.getElementById('heroBtn');
 
+            heroContent.style.opacity = '0';
 
-            heroContent.style.opacity = '1';
+            setTimeout(() => {
+                currentHeroIndex = (currentHeroIndex + 1) % heroData.length;
+                const currentData = heroData[currentHeroIndex];
+
+                bgImages.forEach((img, idx) => {
+                    if (idx === currentHeroIndex) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                });
+
+                heroTag.innerText = currentData.tag;
+                heroTitle.innerText = currentData.title;
+                heroDesc.innerText = currentData.desc;
+                heroBtn.href = currentData.link;
+
+                heroContent.style.opacity = '1';
             }, 400);
-    }
-
+        }
 
         setInterval(rotateHeroBanner, 10000);        
-
 
         let isGrid = false;
 
