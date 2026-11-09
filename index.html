@@ -11,7 +11,7 @@
     <header class="navbar">
         <div class="nav-content">
             <div class="brand">
-                <img src="logo.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'">
+                <img src="BSM Archive Logo.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'">
                 <span class="nav-title">Beast Smash Modding: Archive</span>
             </div>
         </div>
@@ -19,7 +19,7 @@
 
     <main class="main-container">
 
-
+        <!-- Banner Hero (Siempre visible arriba) -->
         <section class="hero" id="heroBanner">
             <div class="hero-bg-wrapper">
                 <img class="hero-bg active" src="ImagesMods/Competitivo pack.png" alt="Competitivo Pack">
@@ -35,14 +35,14 @@
             </div>
         </section>
 
-
+        <!-- Botón abajo del banner, arriba de las categorías, y centrado -->
         <div class="catalogue-action-bar" style="margin: 24px 0; display: flex; justify-content: center;">
             <button id="toggleViewBtn" class="btn-toggle" onclick="toggleLayout()">
                 <span id="btnIcon">☷</span> <span id="btnText">Ver catalogo completo</span>
             </button>
         </div>
 
-
+        <!-- Contenedor de categorías por filas -->
         <div id="rowLayout" class="layout-rows">
 
             <section class="category-section">
@@ -190,17 +190,39 @@
                             <p class="author">Por <span>CanalSmash</span></p>
                         </div>
                     </a>
+                    <a href="Mods/TunTunRTX.html" class="mod-card">
+                        <div class="card-media">
+                            <img src="ImagesMods/PortadaTun.png" alt="TunTun" loading="lazy">
+                            <span class="badge badge-texture">Textura</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>TunTunRTX</h3>
+                            <p class="author">Por <span>VelizFenix</span></p>
+                        </div>
+                    </a>
+                    <a href="Mods/Genios Meme.html" class="mod-card">
+                        <div class="card-media">
+                            <img src="ImagesMods/MuchoIQ.png" alt="Tripulante" loading="lazy">
+                            <span class="badge badge-texture">Textura</span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Genios Meme</h3>
+                            <p class="author">Por <span>HolaSoyAlex</span></p>
+                        </div>
+                    </a>
                 </div>
             </section>
 
         </div>
 
-        <!-- Contenedor del Catálogo Completo (Grid) -->
+
         <div id="gridLayout" class="layout-grid hidden">
             <h2 class="category-title">Catálogo Completo</h2>
             <div class="grid-container" id="gridTarget">
             </div>
         </div>
+
+
 
     </main>
 
